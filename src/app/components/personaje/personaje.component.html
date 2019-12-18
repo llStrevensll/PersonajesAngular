@@ -1,0 +1,27 @@
+<h1 class="animated fadeIn">{{personaje.nombre | uppercase }} - <small>{{ personaje.region }}</small></h1>
+<hr>
+
+<div class="row animated fadeIn fast">
+    <div class="col-md-3">
+
+        <img [src]="personaje.img" class="img-fluid" [alt]="personaje.nombre">
+        <br><br>
+        <a [routerLink]="['/personajes']" class="btn btn-outline-danger btn-block">Regresar</a>
+    </div>
+
+    <div class="col-md-8">
+        <h3>{{ personaje.nombre }}</h3>
+        <hr>
+        <p>
+            {{ personaje.bio }}
+        </p>
+        <div>
+            <img *ngIf="personaje.region =='RUNATERRA'" class="img-logo" src="assets/img/Runaterra.PNG" alt="Runaterra">
+            <img *ngIf="personaje.region =='ZAUN'" class="img-logo" src="assets/img/Zaun.PNG" alt="Zaun">
+            <img *ngIf="personaje.region =='ISLAS DE LAS SOMBRAS'" class="img-logo" src="assets/img/IslaSombras.PNG" alt="Isla de las Sombras">
+            <img *ngIf="personaje.region =='AGUASTURBIAS'" class="img-logo" src="assets/img/Aguasturbias.PNG" alt="Aguasturbias">
+            <img *ngIf="personaje.region =='PILTOVER'" class="img-logo" src="assets/img/Piltover.PNG" alt="Piltover">
+            <img *ngIf="personaje.region =='JONIA'" class="img-logo" src="assets/img/Jonia.PNG" alt="Jonia">
+        </div>
+    </div>
+</div>
