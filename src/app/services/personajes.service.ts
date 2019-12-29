@@ -76,14 +76,14 @@ export class PersonajesService {
       return this.personajes[index];
     }
 
-    buscarPersonajes( termino:string){
+    buscarPersonajes( termino:string):Personaje[]{
       
       let personajesArr:Personaje[] = [];
       termino = termino.toLowerCase();
 
       for(let personaje of this.personajes){
         
-        let nombre = personaje.nombre.toLowerCase();
+        let nombre = personaje.nombre.toLowerCase();//nombre del personaje
 
         if (nombre.indexOf(termino) >= 0) {//index of: buscar string dentro de nombre
           personajesArr.push(personaje)
