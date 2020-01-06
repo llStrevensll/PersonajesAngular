@@ -6,6 +6,7 @@ export interface Personaje{
     bio: string;
     img: string;
     region: string;
+    idx?: number;
 }
 
 @Injectable()
@@ -81,12 +82,14 @@ export class PersonajesService {
       let personajesArr:Personaje[] = [];
       termino = termino.toLowerCase();
 
-      for(let personaje of this.personajes){
+      for(let i = 0; i < this.personajes.length; i++){
         
+        let personaje = this.personajes[i];
         let nombre = personaje.nombre.toLowerCase();//nombre del personaje
 
         if (nombre.indexOf(termino) >= 0) {//index of: buscar string dentro de nombre
-          personajesArr.push(personaje)
+          personaje.idx = i;
+          personajesArr.push(personaje);
         }
       }
 
